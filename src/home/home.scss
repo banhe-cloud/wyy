@@ -45,7 +45,23 @@
         }
         
     }
+    .home__carousel{
+        .home__carousel__item{
+            background:#ccc;
+            .home__carousel__item__img{
+                margin: 0 auto;
+                width: 730px;
+            }
+        }
+    }
 
     
+}
+.every{
+    height: '160px';
+    color: '#fff';
+    line-height: '160px';
+    text-align: 'center';
+    background: '#364d79';
 }
 

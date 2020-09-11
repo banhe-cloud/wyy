@@ -1,6 +1,6 @@
 import {get,post} from './request';
 
-const config = "" 
+const config = "http://localhost:3000" 
 
 //获取首页轮播图
 export function getBanner(params){
