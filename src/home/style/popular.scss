@@ -1,0 +1,32 @@
+.popular {
+    margin-top: 20px;
+
+    .popular__title {
+        font-weight: bold;
+    }
+
+    .popular__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .popular__item {
+            width: 140px;
+            margin: 10px 0;
+            cursor: pointer;
+
+            .popular__item__img {
+                height: 140px;
+                border-radius: 2px;
+            }
+
+            .popular__item__name {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+
+}
