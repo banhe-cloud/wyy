@@ -29,12 +29,13 @@ function Home() {
             );
           })}
         </Carousel>
+
       </div>
       <div className="home__content">
         <Popular />
       </div>
 
-    </div>
+    </div >
   );
 }
 export default Home;
