@@ -1,4 +1,4 @@
-import { get, post } from './request';
+import { get } from './request';
 
 const config = "http://localhost:9000"
 
