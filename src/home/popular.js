@@ -1,4 +1,4 @@
-import Item from "antd/lib/list/Item";
+
 import React from "react";
 import { useState, useEffect } from "react";
 import { getRecommend } from "../api/home";
@@ -22,10 +22,10 @@ export default function Popular() {
             <h2 className="popular__title">热门推荐</h2>
             <div className="popular__content">
                 {
-                    list.map(item => {
+                    list.map((item, index) => {
                         return (
-                            <div className="popular__item" onClick={toList}>
-                                <img className="popular__item__img" src={item.picUrl} />
+                            <div className="popular__item" onClick={toList} key={index}>
+                                <img className="popular__item__img" src={item.picUrl} alt="" />
                                 <p className="popular__item__name" title={item.name}>{item.name}</p>
                             </div>
                         )

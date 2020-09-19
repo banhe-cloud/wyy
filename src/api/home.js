@@ -18,3 +18,7 @@ export function getRecommend(params) {
 export function getSort(params) {
     return get(`${config}/playlist/hot`, params)
 }
+//登录
+export function login(params) {
+    return get(`${config}/user/detail`, params)
+}

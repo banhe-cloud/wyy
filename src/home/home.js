@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import { Carousel } from "antd";
 import "antd/dist/antd.css";
 import "./style/home.scss";
-import { getBanner, getRecommend } from "../api/home";
+import { getBanner } from "../api/home";
 import Popular from "./popular"
 
 function Home() {
-
   let [bannerList, setBannerList] = useState([]);
   useEffect(() => {
     getBanner().then((res) => {
@@ -16,15 +15,14 @@ function Home() {
 
     });
   }, []);
-
   return (
     <div className="home">
       <div className="home__carousel">
         <Carousel autoplay>
-          {bannerList.map((item) => {
+          {bannerList.map((item, index) => {
             return (
-              <div className=" home__carousel__item">
-                <img className="home__carousel__item__img" src={item.imageUrl} />
+              <div className=" home__carousel__item" key={index}>
+                <img className="home__carousel__item__img" src={item.imageUrl} alt="" />
               </div>
             );
           })}
