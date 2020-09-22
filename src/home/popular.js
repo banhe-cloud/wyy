@@ -5,18 +5,19 @@ import { getRecommend } from "../api/home";
 import "./style/popular.scss"
 import { createHashHistory } from 'history';
 
-
-function toList() {
-    const history = createHashHistory();
-    history.push('./playList')
-}
 export default function Popular() {
     let [list, setList] = useState([])
-    useEffect(() => {
+    useEffect(async () => {
         getRecommend().then((res) => {
             setList(res.result)
         })
     }, []);
+
+    function toListDetail(id) {
+        const history = createHashHistory();
+        history.push(`./playList/${id}`)
+    }
+
     return (
         <div className="popular">
             <h2 className="popular__title">热门推荐</h2>
@@ -24,7 +25,7 @@ export default function Popular() {
                 {
                     list.map((item, index) => {
                         return (
-                            <div className="popular__item" onClick={toList} key={index}>
+                            <div className="popular__item" onClick={() => toListDetail(item.id)} key={index}>
                                 <img className="popular__item__img" src={item.picUrl} alt="" />
                                 <p className="popular__item__name" title={item.name}>{item.name}</p>
                             </div>

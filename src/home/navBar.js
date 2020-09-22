@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import './style/navBar.scss';
 import { login } from "../api/home"
 import { Modal, Input } from 'antd';
@@ -16,7 +16,11 @@ const tabArr = [
 function NavBar() {
     const [tabIndex, setTabIndex] = useState(0);
     const [visibleLogin, setVisibleLogin] = useState(false);
-    const [state, dispatch] = useContext(Context)
+    const [state, dispatch] = useContext(Context);
+    useEffect(() => {
+        let userId = localStorage.getItem("userId");
+        if (userId) setLogin(userId)
+    }, [])
     const idRef = useRef()
     function changeTab(index) {
         setTabIndex(index);
@@ -26,6 +30,10 @@ function NavBar() {
     }
     function handleOk() {
         let id = idRef.current.state.value;
+        setLogin(id)
+
+    }
+    function setLogin(id) {
         login({
             uid: id
         }).then((res) => {
@@ -33,7 +41,6 @@ function NavBar() {
             setVisibleLogin(false)
             dispatch({ type: "sign", data: res })
         })
-
     }
     return (
         <div className="home__top">
@@ -56,7 +63,7 @@ function NavBar() {
                     ))}
                 </div>
                 {
-                    state && state.isLogin ? null :
+                    state && state.isLogin ? <img className="home__top__content__avatar" src={state.userInfo.profile.avatarUrl} alt="" /> :
                         <div className="home__top__content__login" onClick={toLogin}>登录</div>
 
                 }

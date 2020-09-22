@@ -13,7 +13,7 @@ function App() {
       <Router>
         <NavBar />
         <Route path="/" exact component={Home} />
-        <Route path="/playlist" exact component={SongList} />
+        <Route path="/playlist/:id" exact component={SongList} />
       </Router>
     </Context.Provider>
 

@@ -22,3 +22,14 @@ export function getSort(params) {
 export function login(params) {
     return get(`${config}/user/detail`, params)
 }
+
+//获取歌单列表
+export function getSongList(params) {
+    return get(`${config}/song/detail`, params)
+}
+
+//获取歌单详情
+export function getSongDetail(params) {
+    return get(`${config}/playlist/detail`, params)
+}
+

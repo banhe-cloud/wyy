@@ -32,7 +32,6 @@ function Home() {
       <div className="home__content">
         <Popular />
       </div>
-
     </div >
   );
 }
