@@ -5,7 +5,7 @@ import NavBar from './home/navBar'
 import SongList from "./songList/songList"
 import { loginReducer, Context } from "./reducer/index"
 import './App.scss';
-
+//test svn1
 function App() {
   const [state, dispatch] = useReducer(loginReducer)
   return (
