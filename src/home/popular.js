@@ -7,7 +7,7 @@ import { createHashHistory } from 'history';
 
 export default function Popular() {
     let [list, setList] = useState([])
-    useEffect(async () => {
+    useEffect(() => {
         getRecommend().then((res) => {
             setList(res.result)
         })

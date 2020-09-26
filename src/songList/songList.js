@@ -12,13 +12,19 @@ export default function SongList(props) {
             setList(res.songs)
         })
     }, [])
+
+    function playSong(item) {
+        let audio = new Audio(`https://music.163.com/song/media/outer/url?id=${item.id}.mp3`);
+        debugger
+        audio.play()
+    }
     return (
         <div className="songList">
             <div>
                 {
                     list.map((item, index) => {
                         return (
-                            <div key={index}>{item.name}</div>
+                            <div key={index} onClick={() => { playSong(item) }}>{item.name}</div>
                         )
 
                     })
