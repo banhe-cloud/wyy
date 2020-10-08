@@ -1,20 +1,12 @@
 import { createContext } from 'react';
-let initState = {
-    isLogin: false,
-    userInfo: {}
-}
+import { combineReducers } from 'redux';
+import loginReducer from "./loginReducer"
+import songReducer from "./songReducer"
+export let Reducer = combineReducers({//合并reducer
+    login: loginReducer,
+    song: songReducer,
+})
+
+
+
 export const Context = createContext();
-export function loginReducer(state = initState, action) {
-    switch (action.type) {
-        case "sign": return {
-            ...state,
-            isLogin: true,
-            userInfo: action.data
-        }
-        case "signOut": return {
-            isLogin: false,
-            userInfo: {}
-        }
-        default: return state
-    }
-}   

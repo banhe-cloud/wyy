@@ -1,8 +1,37 @@
 .audioPlayer {
-    height: 50px;
     width: 100%;
-    background: pink;
+    background: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 12px #131212;
+
+    &_center {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        .playBtn {
+            width: 52px;
+            height: 52px;
+            background-color: #d33a31;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            color: #fff;
+            font-size: 24px;
+            margin: 0 30px;
+        }
+
+        .switch {
+            color: #d33a31;
+            font-size: 25px;
+        }
+
+    }
+
 }

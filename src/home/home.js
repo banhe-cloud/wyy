@@ -8,6 +8,7 @@ import Popular from "./popular"
 
 function Home() {
   let [bannerList, setBannerList] = useState([]);
+  // bannerList = bannerList.slice(0, 1)
   useEffect(() => {
     getBanner().then((res) => {
       setBannerList(res.banners);
@@ -21,7 +22,11 @@ function Home() {
         <Carousel autoplay>
           {bannerList.map((item, index) => {
             return (
-              <div className=" home__carousel__item" key={index}>
+              <div className="home__carousel__item" key={index}>
+                <div
+                  style={{ backgroundImage: `url("${item.imageUrl}")` }}
+                  className="item_background">
+                </div>
                 <img className="home__carousel__item__img" src={item.imageUrl} alt="" />
               </div>
             );

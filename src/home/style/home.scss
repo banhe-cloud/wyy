@@ -1,15 +1,31 @@
 .home {
     width: 100vw;
     min-width: 1130px;
-    background-color: #f5f5f5;
+    // background-color: #f5f5f5;
 
     .home__carousel {
         .home__carousel__item {
-            background: #ccc;
+            position: relative;
+
+            .item_background {
+                filter: blur(60px);
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                z-index: -1;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
 
             .home__carousel__item__img {
                 margin: 0 auto;
                 width: 730px;
+                // position: absolute;
+                // left: 50%;
+                // top: 0;
+                // transform: -scaleX(50%);
             }
         }
     }

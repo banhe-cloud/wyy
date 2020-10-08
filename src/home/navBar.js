@@ -63,7 +63,7 @@ function NavBar() {
                     ))}
                 </div>
                 {
-                    state && state.isLogin ? <img className="home__top__content__avatar" src={state.userInfo.profile.avatarUrl} alt="" /> :
+                    state && state.login.isLogin ? <img className="home__top__content__avatar" src={state.login.userInfo.profile.avatarUrl} alt="" /> :
                         <div className="home__top__content__login" onClick={toLogin}>登录</div>
 
                 }

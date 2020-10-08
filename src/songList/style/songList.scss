@@ -1,0 +1,62 @@
+.songList {
+
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+
+    .songList_info {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .info_img {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+    }
+
+    .info_detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .detail_name {
+            font-size: 20px;
+        }
+
+        .detail_creator {
+            display: flex;
+            align-items: center;
+
+            .detail_creator_avatar {
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+                margin-right: 10px;
+            }
+
+            .creator_name {
+                color: #0c73c2;
+                margin-right: 20px;
+            }
+        }
+
+        .detail_sort {
+            display: flex;
+
+            .sort_every {
+                background-color: #d33a31;
+                width: 50px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                border-radius: 30px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+
+}

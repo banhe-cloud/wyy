@@ -33,3 +33,7 @@ export function getSongDetail(params) {
     return get(`${config}/playlist/detail`, params)
 }
 
+//歌曲url
+export function songUrl(params) {
+    return get(`${config}/playlist/detail`, params)
+}
