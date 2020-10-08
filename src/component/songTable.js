@@ -44,34 +44,6 @@ export default function SongTable(props) {
             album: item.al.name
         }
     })
-
-
-
-    // const data = [
-    //     {
-    //         key: '1',
-    //         index: "1",
-    //         title: 'John Brown',
-    //         time: 32,
-    //         person: 'New York No. 1 Lake Park',
-    //         album: "asdfa",
-    //     },
-    //     {
-    //         key: '1',
-    //         index: "1",
-    //         title: 'John Brown',
-    //         time: 32,
-    //         person: 'New York No. 1 Lake Park',
-    //         album: "asdfa",
-    //     }, {
-    //         key: '1',
-    //         index: "1",
-    //         title: 'John Brown',
-    //         time: 32,
-    //         person: 'New York No. 1 Lake Park',
-    //         album: "asdfa",
-    //     },
-    // ];
     return (
         <Table columns={columns} dataSource={data} style={{ border: "1px solid #f0f0f0" }} pagination={false} />
     )

@@ -13,9 +13,7 @@ function App() {
   const songIndex = state ? state.song.songIndex : 0;
   const idRef = useRef();
 
-
   function changeIndex(type) {
-    debugger
     let _index = type === "next" ? songIndex + 1 : songIndex - 1;
     _index >= songList.length && (_index = 0)
     _index < 0 && (_index = songList.length - 1)
@@ -25,7 +23,6 @@ function App() {
       }
     })
   }
-
   return (
     <Context.Provider value={[state, dispatch]} style={{ overflow: "auto" }}>
       <Router>
@@ -33,16 +30,8 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/playlist/:id" exact component={SongList} />
       </Router>
-
-      <div onClick={() => {
-        console.log(idRef.current)
-      }} ></div>
-
-
       <AudioPlayer last={() => { changeIndex("last") }} next={() => { changeIndex("next") }} ref={idRef} songList={songList} songIndex={songIndex} />
     </Context.Provider>
-
-
   );
 }
 
