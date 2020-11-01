@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useRef, useImperativeHandle, forwardRef, useContext, useEffect } from "react";
 import "./audioPlayer.scss"
+import VoiceControl from "../voiceControl/voiceControl"
 let AudioPlayer = (props, ref) => {
     const baseUrl = "https://music.163.com/song/media/outer/url"
     const { songList, songIndex } = props;
@@ -39,8 +40,11 @@ let AudioPlayer = (props, ref) => {
                 </div>
                 <div className="iconfont nextSong switch" onClick={props.next}></div>
             </div>
+            <div className="iconfont voice audioPlayer_voice"></div>
+            <div className="audioPlayer_voiceControl">
+                <VoiceControl />
+            </div>
 
-            <div className="iconfont voice"></div>
             <audio ref={idRef} autoPlay src={songList.length ? `${baseUrl}?id=${songList[songIndex].id}.mp3` : ""}></audio>
         </div>
     )

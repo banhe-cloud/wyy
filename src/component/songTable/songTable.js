@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Table, Tag, Space } from 'antd';
-
+import "./songTable.scss"
 export default function SongTable(props) {
     let datas = props.data;
     const columns = [

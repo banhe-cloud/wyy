@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./style/songList.scss"
 import { getSongList, getSongDetail } from "../api/home";
 import { Context } from "../reducer/index";
-import SongTable from "../component/songTable"
+import SongTable from "../component/songTable/songTable"
 export default function SongList(props) {
     const [list, setList] = useState([]);
     const [info, setInfo] = useState({});
@@ -27,7 +27,6 @@ export default function SongList(props) {
         })
     }
     return (
-
         list.length ? <div className="songList center_content">
             <div className="songList_info">
                 <img className="info_img" src={info.coverImgUrl} />
@@ -59,22 +58,6 @@ export default function SongList(props) {
                 <SongTable data={list} />
 
             </div>
-            {/* <div className="songList_song">
-                <div>
-                    {
-                        list.map((item, index) => {
-                            return (
-                                <div key={index} onClick={() => { playSong(item, index) }}>{item.name}</div>
-                            )
-
-                        })
-                    }
-                </div>
-            </div> */}
         </div> : null
-
-
-
-
     )
 }
